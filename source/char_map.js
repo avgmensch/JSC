@@ -6,7 +6,7 @@ import { getNumber } from "./numbers.js";
  * @param {string} text Normal text
  * @returns {string} text as strange string
  */
-export const toString = (text) => {
+export const fromString = (text) => {
   let res = [];
 
   for (let i = 0; i < text.length; i++) {
@@ -19,32 +19,34 @@ export const toString = (text) => {
 /**
  * @type {Object<string, string>}
  */
-const charMap = {};
+export const charMap = {};
+
+// Static
+charMap["\\"] = `(/\\\\/+[])[${getNumber(1)}]`
 charMap[" "] = `({}+[])[${getNumber(7)}]`;
 charMap["a"] = `(+{}+[])[${getNumber(1)}]`;
 charMap["b"] = `({}+[])[${getNumber(2)}]`;
-
 charMap["c"] = `({}+[])[${getNumber(5)}]`;
-charMap["d"] = `([][0]+[])[${getNumber(2)}]`;
+charMap["d"] = `([][${getNumber(0)}]+[])[${getNumber(2)}]`;
 charMap["e"] = `({}+[])[${getNumber(4)}]`;
-
-charMap["f"] = `([][0]+[])[${getNumber(4)}]`
-charMap["i"] = `([][0]+[])[${getNumber(5)}]`
+charMap["f"] = `([][${getNumber(0)}]+[])[${getNumber(4)}]`
+charMap["i"] = `([][${getNumber(0)}]+[])[${getNumber(5)}]`
 charMap["l"] = `(![]+[])[${getNumber(2)}]`
-
-charMap["n"] = `([][0]+[])[${getNumber(1)}]`
+charMap["n"] = `([][${getNumber(0)}]+[])[${getNumber(1)}]`
 charMap["o"] = `({}+[])[${getNumber(1)}]`
 charMap["r"] = `(!![]+[])[${getNumber(1)}]`
-
 charMap["s"] = `(![]+[])[${getNumber(3)}]`
 charMap["t"] = `(!![]+[])[${getNumber(0)}]`
-charMap["u"] = `([][0]+[])[${getNumber(0)}]`
+charMap["u"] = `([][${getNumber(0)}]+[])[${getNumber(0)}]`
 
-charMap["S"] = `(([]+[])[${toString("constructor")}]+[])[${getNumber(9)}]`
+// Dynamic 1
+charMap["g"] = `(([]+[])[${fromString("constructor")}]+[])[${getNumber(14)}]`
+charMap["p"] = `(/-/[${fromString("constructor")}]+[])[${getNumber(14)}]`
+charMap["S"] = `(([]+[])[${fromString("constructor")}]+[])[${getNumber(9)}]`
+charMap["C"] = `(()=>{})[${fromString("constructor")}](${fromString("return escape")})()(${charMap["\\"]})[${getNumber(2)}]`
 
-// fromCharCode
-// fro___ar_ode
+// Dynamic 2
+charMap["h"] = `(${getNumber(17)})[${fromString("toString")}](${getNumber(18)})`
+charMap["m"] = `(${getNumber(22)})[${fromString("toString")}](${getNumber(23)})`
 
-// 22["toString"](23)
-// toString
-// to_trin_
+debugger;
