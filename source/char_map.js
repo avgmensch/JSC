@@ -19,33 +19,6 @@ export const toString = (text) => {
 /**
  * @type {Object<string, string>}
  */
-export const tmp = {
-  " ": `({}+[])[${getNumber(7)}]`,
-  "a": `(+{}+[])[${getNumber(1)}]`,
-  "b": `({}+[])[${getNumber(2)}]`,
-  
-  "c": `({}+[])[${getNumber(5)}]`,
-  "d": `([][0]+[])[${getNumber(2)}]`,
-  "e": `({}+[])[${getNumber(4)}]`,
-  
-  "f": `([][0]+[])[${getNumber(4)}]`,
-  "i": `([][0]+[])[${getNumber(5)}]`,
-  "l": `(![]+[])[${getNumber(2)}]`,
-  
-  "n": `([][0]+[])[${getNumber(1)}]`,
-  "o": `({}+[])[${getNumber(1)}]`,
-  "r": `(!![]+[])[${getNumber(1)}]`,
-  
-  "s": `(![]+[])[${getNumber(3)}]`,
-  "S": `([]+[])[${toString("constructor")}]`,
-  "t": `(!![]+[])[${getNumber(0)}]`,
-  
-  "u": `([][0]+[])[${getNumber(0)}]`
-};
-
-/**
- * @type {Object<string, string>}
- */
 const charMap = {};
 charMap[" "] = `({}+[])[${getNumber(7)}]`;
 charMap["a"] = `(+{}+[])[${getNumber(1)}]`;
@@ -67,7 +40,7 @@ charMap["s"] = `(![]+[])[${getNumber(3)}]`
 charMap["t"] = `(!![]+[])[${getNumber(0)}]`
 charMap["u"] = `([][0]+[])[${getNumber(0)}]`
 
-charMap["S"] = `([]+[])[${toString("constructor")}]`
+charMap["S"] = `(([]+[])[${toString("constructor")}]+[])[${getNumber(9)}]`
 
 // fromCharCode
 // fro___ar_ode
