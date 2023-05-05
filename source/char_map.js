@@ -7,19 +7,15 @@ import { getNumber } from "./numbers.js";
  * @returns {string} text as weird string
  */
 export const fromString = (text) => {
-  let res = [];
-
-  for (let i = 0; i < text.length; i++) {
-    res.push(charMap[text[i]]);
-  }
-
-  return res.join("+");
+  return text.split("").map((v) => {
+    return charMap[v]
+  }).join("+")
 }
 
 /**
  * @type {Object<string, string>}
  */
-export const charMap = {};
+const charMap = {};
 
 // Static
 charMap["\\"] = `(/\\\\/+[])[${getNumber(1)}]`
