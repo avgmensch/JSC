@@ -4,7 +4,7 @@ import { getNumber } from "./numbers.js";
 
 /**
  * @param {string} text Normal text
- * @returns {string} text as strange string
+ * @returns {string} text as weird string
  */
 export const fromString = (text) => {
   let res = [];
@@ -48,5 +48,3 @@ charMap["C"] = `(()=>{})[${fromString("constructor")}](${fromString("return esca
 // Dynamic 2
 charMap["h"] = `(${getNumber(17)})[${fromString("toString")}](${getNumber(18)})`
 charMap["m"] = `(${getNumber(22)})[${fromString("toString")}](${getNumber(23)})`
-
-debugger;
