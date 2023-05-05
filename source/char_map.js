@@ -8,6 +8,10 @@ import { getNumber } from "./numbers.js";
  */
 export const fromString = (text) => {
   return text.split("").map((v) => {
+    if (!(v in charMap)) {
+      const charCode = getNumber(v.charCodeAt(0));
+      return `([]+[])[${fromString("constructor")}][${fromString("fromCharCode")}](${charCode})`
+    }
     return charMap[v]
   }).join("+")
 }
