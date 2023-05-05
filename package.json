@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
+  "main": "js_compiler.js",
   "scripts": {
     "format": "prettier -w ."
   },
