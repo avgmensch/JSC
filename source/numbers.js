@@ -5,7 +5,7 @@ export const one = "(+!![])";
 
 /**
  * @param {number} n Number to convert
- * @returns {string} Number in in the weird format
+ * @returns {string} `n` in in the weird format
  */
 export const getNumber = (n) => {
   if (n == 0) {

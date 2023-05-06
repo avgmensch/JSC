@@ -4,7 +4,7 @@ import { getNumber } from "./numbers.js";
 
 /**
  * @param {string} text Normal text
- * @returns {string} text as weird string
+ * @returns {string} `text` as weird string
  */
 export const fromString = (text) => {
   return text
