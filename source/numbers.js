@@ -4,7 +4,7 @@ export const zero = "(+[])";
 export const one = "(+!![])";
 
 /**
- * @param {number} n Number to convert
+ * @param {number} n Number to convert (n >= 0)
  * @returns {string} `n` in in the weird format
  */
 export const getNumber = (n) => {
