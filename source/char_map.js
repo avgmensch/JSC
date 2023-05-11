@@ -7,18 +7,13 @@ import { getNumber } from "./numbers.js";
  * @returns {string} `text` as weird string
  */
 export const fromString = (text) => {
-  return text
-    .split("")
-    .map((v) => {
-      if (!(v in charMap)) {
-        const charCode = getNumber(v.charCodeAt(0));
-        return `([]+[])[${fromString("constructor")}][${fromString(
-          "fromCharCode"
-        )}](${charCode})`;
-      }
-      return charMap[v];
-    })
-    .join("+");
+  return text.split("").map((v) => {
+    if (!(v in charMap)) {
+      const charCode = getNumber(v.charCodeAt(0));
+      return `([]+[])[${fromString("constructor")}][${fromString("fromCharCode")}](${charCode})`;
+    }
+    return charMap[v];
+  }).join("+");
 };
 
 /**
@@ -48,14 +43,8 @@ charMap["u"] = `([][${getNumber(0)}]+[])[${getNumber(0)}]`;
 charMap["g"] = `(([]+[])[${fromString("constructor")}]+[])[${getNumber(14)}]`;
 charMap["p"] = `(/-/[${fromString("constructor")}]+[])[${getNumber(14)}]`;
 charMap["S"] = `(([]+[])[${fromString("constructor")}]+[])[${getNumber(9)}]`;
-charMap["C"] = `(()=>{})[${fromString("constructor")}](${fromString(
-  "return escape"
-)})()(${charMap["\\"]})[${getNumber(2)}]`;
+charMap["C"] = `(()=>{})[${fromString("constructor")}](${fromString("return escape")})()(${charMap["\\"]})[${getNumber(2)}]`;
 
 // Dynamic 2
-charMap["h"] = `(${getNumber(17)})[${fromString("toString")}](${getNumber(
-  18
-)})`;
-charMap["m"] = `(${getNumber(22)})[${fromString("toString")}](${getNumber(
-  23
-)})`;
+charMap["h"] = `(${getNumber(17)})[${fromString("toString")}](${getNumber(18)})`;
+charMap["m"] = `(${getNumber(22)})[${fromString("toString")}](${getNumber(23)})`;

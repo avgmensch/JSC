@@ -1,0 +1,13 @@
+{
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 150,
+    "semiColons": true,
+    "singleQuote": false,
+    "useTabs": false,
+    "exclude": [
+      "./LICENSE.md",
+      "./README.md"
+    ]
+  }
+}
