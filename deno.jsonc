@@ -1,4 +1,7 @@
 {
+  "tasks": {
+    "make-example": "deno run --allow-write ./example/mkexmp.js"
+  },
   "fmt": {
     "indentWidth": 2,
     "lineWidth": 150,
@@ -6,7 +9,6 @@
     "singleQuote": false,
     "useTabs": false,
     "exclude": [
-      "./LICENSE.md",
       "./README.md",
       "./example/example.js"
     ]
