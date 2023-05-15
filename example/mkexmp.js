@@ -1,6 +1,6 @@
 //@ts-check
 
-import { compileCode } from "../js_compiler.js";
+import { compileCode } from "../mod.js";
 
 const code = compileCode(`console.log("Hello World");`);
 
