@@ -7,8 +7,8 @@ const helpMessage = `\
 jsc [FILE] [OPTIONS]
 
 OPTIONS
-  -o, --out
-  -h, --help
+  -o, --out   show this message
+  -h, --help  set output-file
 
 EXAMPLES
   jsc hello.js -o wtf.js
