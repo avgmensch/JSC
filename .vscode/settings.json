@@ -1,5 +1,11 @@
 {
+  "files.eol": "\n",
+  "editor.rulers": [100],
   "deno.enable": true,
   "deno.lint": true,
-  "deno.config": "./deno.jsonc"
+  "deno.config": "./deno.json",
+  "deno.importMap": "./import.json",
+  "cSpell.words": [
+    "nums"
+  ]
 }

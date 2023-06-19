@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "asserts": "https://deno.land/std@0.192.0/testing/asserts.ts",
+    "flags": "https://deno.land/std@0.192.0/flags/mod.ts"
+  }
+}
