@@ -2,14 +2,14 @@ import { getNumber, one, zero } from "./nums.ts";
 
 /**
  * Encode any string `str` into a string that only needs the characters `()[]{}/\!+`.
- * 
- * If a string is not already know it can be created on the fly. This can be done by getting the 
- * string-constructor from `([]+[])` using `["constructor"]`. Because we can't use normal 
- * characters, we need to get it using the char-code of each letter encoded by `getNumber`. 
+ *
+ * If a string is not already know it can be created on the fly. This can be done by getting the
+ * string-constructor from `([]+[])` using `["constructor"]`. Because we can't use normal
+ * characters, we need to get it using the char-code of each letter encoded by `getNumber`.
  * Therefore, we need to `fromCharCode` from the constructor.
- * 
+ *
  * In the end, it looks like this `([]+[])[${constructor}][${fromCharCode}](${charCode})`.
- * 
+ *
  * @example
  * getString("acd")
  * // a => (+{}+[])[(+!![])] +
